@@ -1,6 +1,8 @@
-const colors = require('tailwindcss/colors')
+import colors from 'tailwindcss/colors';
+import aspectRatio from '@tailwindcss/aspect-ratio';
+
 module.exports = {
-  purge: ["./src/**/*.jsx", "./index.html"],
+  content: ["./src/**/*.jsx", "./index.html"], // updated
   darkMode: "class", // or 'media' or 'class'
   theme: {
     borderWidth: {
@@ -28,5 +30,5 @@ module.exports = {
     },
     fontSmoothing: ["hover", "focus"],
   },
-  plugins: [require("@tailwindcss/aspect-ratio")],
+  plugins:[aspectRatio], 
 };
