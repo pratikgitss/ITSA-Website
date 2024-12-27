@@ -3,12 +3,14 @@ import NavBar from "./components/NavBar";
 import Foot from "./components/Foot";
 import Home from "./Home";
 import Resource from "./Resources";
-// import Gallery from "./Gallery";
+import Loader from "./components/Loader";
 import Event from "./Event";
 import Teams from "./Teams";
 import Member from "./Member";
 import Contact from "./Contact"
 import Join from "./JoinUs"
+import PageLoading from "./hooks/PageLoading";
+
 import {
   BrowserRouter,
   Switch,
@@ -16,6 +18,13 @@ import {
 } from "react-router-dom"
 
 export default function App() {
+  const isLoading = PageLoading();
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
+
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
